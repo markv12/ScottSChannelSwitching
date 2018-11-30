@@ -11,6 +11,7 @@ public class VisionPointLauncher : MonoBehaviour {
             if(Physics.Raycast(theCamera.position, theCamera.forward, out hit, 1000)) {
                 vpManager.AddVisionPoint(hit.point);
             }
+            QualitySettings.vSyncCount = 0;
         }
     }
 }

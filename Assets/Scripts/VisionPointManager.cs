@@ -6,7 +6,7 @@ public class VisionPointManager : MonoBehaviour {
     [Range(0, 125)]
     public float distanceLimit = 10;
 
-    private const int POINT_COUNT = 15;
+    private const int POINT_COUNT = 25;
 
     private int currentPointIndex = 0;
     private Vector4[] points = new Vector4[POINT_COUNT];

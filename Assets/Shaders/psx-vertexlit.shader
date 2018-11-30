@@ -78,7 +78,7 @@ Shader "psx/vertexlit" {
 					}
 
 					sampler2D _MainTex;
-					uniform float4 VisionPoints[15];
+					uniform float4 VisionPoints[25];
 
 					float4 frag(v2f IN) : COLOR
 					{
@@ -88,14 +88,14 @@ Shader "psx/vertexlit" {
 						float coloredness = 0;
 						float lum = (c.r + c.b + c.g);
 						float theNoise = snoise(IN.worldPos * 4);
-						for (int j = 0; j < 15; j++) {
+						for (int j = 0; j < 25; j++) {
 							float4 thePoint = VisionPoints[j];
 							float dist = distance(IN.worldPos, thePoint);
 							dist += (theNoise + lum);
+
 							if (dist < thePoint.a) {
 								closeness += 1;
 								coloredness = 0;
-								
 							}
 							else if (dist < (thePoint.a + 0.8) && closeness == 0) {
 								coloredness += 1;
