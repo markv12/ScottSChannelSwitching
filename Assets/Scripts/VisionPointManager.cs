@@ -5,9 +5,7 @@ public class VisionPointManager : MonoBehaviour {
 
     public static VisionPointManager instance;
 
-    [Range(0, 125)]
-    public float distanceLimit = 10;
-
+    private const float distanceLimit = 6.666f;
     private const int POINT_COUNT = 25;
 
     private int currentPointIndex = 0;
@@ -46,7 +44,6 @@ public class VisionPointManager : MonoBehaviour {
         }
         SetPointExpandAmount(index, distanceLimit);
 
-        yield return new WaitForSeconds(0.666f);
         elapsedTime = 0;
         progress = 0;
         while (progress < 1) {
