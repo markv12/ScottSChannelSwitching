@@ -26,7 +26,7 @@ public class VisionPointManager : MonoBehaviour {
         Shader.SetGlobalVectorArray("VisionPoints", points);
     }
 
-    private const float EXPAND_TIME = 0.5f;
+    private const float EXPAND_TIME = 0.666f;
     private const float CONTRACT_TIME = 20f;
     private IEnumerator VisionPointRoutine(int index) {
         float elapsedTime = 0;

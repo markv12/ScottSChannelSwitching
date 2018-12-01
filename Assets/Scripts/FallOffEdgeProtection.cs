@@ -6,7 +6,7 @@ public class FallOffEdgeProtection : MonoBehaviour {
     private Transform theTransform;
 	
 	void Update () {
-		if(theTransform.position.y < -12) {
+		if(theTransform.position.y < -15) {
             theTransform.position = Vector3.zero;
         }
 	}
