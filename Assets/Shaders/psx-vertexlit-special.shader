@@ -89,7 +89,7 @@ Shader "psx/vertexlitSpecial" {
 						}
 						clip(-0.5 + closeness + coloredness);
 						if (coloredness > 0) {
-							c.b += 1.8;
+							c.b = 2.5;
 						}
 	/*					if (coloredness > 0) {
 							return float4(1, 0, 0, 1);
