@@ -1,8 +1,10 @@
 ﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
 
-Shader "psx/vertexlit" {
+Shader "psx/vertexlitSpecial" {
 	Properties{
 		_MainTex("Base (RGB)", 2D) = "white" {}
+		_Color("Color", Color) = (1.0, 1.0, 1.0, 1.0)
+
 	}
 		SubShader{
 			Tags { "RenderType" = "Opaque" }
@@ -22,15 +24,13 @@ Shader "psx/vertexlit" {
 					{
 						fixed4 pos : SV_POSITION;
 						half4 color : COLOR0;
-						half4 colorFog : COLOR1;
 						float2 uv_MainTex : TEXCOORD0;
 						half3 normal : TEXCOORD1;
 						float3 worldPos : TEXCOORD2;
 					};
 
+					float4 _Color;
 					float4 _MainTex_ST;
-					uniform half4 unity_FogStart;
-					uniform half4 unity_FogEnd;
 
 					v2f vert(appdata_full v)
 					{
@@ -58,21 +58,6 @@ Shader "psx/vertexlit" {
 						o.uv_MainTex *= distance + (vertex.w*(UNITY_LIGHTMODEL_AMBIENT.a * 8)) / distance / 2;
 						o.normal = distance + (vertex.w*(UNITY_LIGHTMODEL_AMBIENT.a * 8)) / distance / 2;
 
-						//Fog
-						float4 fogColor = unity_FogColor;
-
-						float fogDensity = (unity_FogEnd - distance) / (unity_FogEnd - unity_FogStart);
-						o.normal.g = fogDensity;
-						o.normal.b = 1;
-
-						o.colorFog = fogColor;
-						o.colorFog.a = clamp(fogDensity,0,1);
-
-						//Cut out polygons
-						if (distance > unity_FogStart.z + unity_FogColor.a * 255)
-						{
-							o.pos.w = 0;
-						}
 						o.worldPos = mul(unity_ObjectToWorld, v.vertex);
 						return o;
 					}
@@ -82,11 +67,11 @@ Shader "psx/vertexlit" {
 
 					float4 frag(v2f IN) : COLOR
 					{
-						half4 c = tex2D(_MainTex, IN.uv_MainTex / IN.normal.r)*IN.color;
+						half4 c = tex2D(_MainTex, IN.uv_MainTex / IN.normal.r)*IN.color * _Color;
 
 						float closeness = 0;
 						float coloredness = 0;
-						float lum = (c.r + c.b + c.g);
+						float lum = (0.2126*c.r + 0.7152*c.g + 0.0722*c.b);
 						float theNoise = snoise(IN.worldPos * 4);
 						for (int j = 0; j < 25; j++) {
 							float4 thePoint = VisionPoints[j];
@@ -104,7 +89,7 @@ Shader "psx/vertexlit" {
 						}
 						clip(-0.5 + closeness + coloredness);
 						if (coloredness > 0) {
-							c.b += 0.5;
+							c.b += 1.8;
 						}
 	/*					if (coloredness > 0) {
 							return float4(1, 0, 0, 1);
@@ -113,9 +98,7 @@ Shader "psx/vertexlit" {
 						float b = distance(IN.worldPos, VisionPoints[1])*0.02;
 						return float4(r, 0, b, 1);*/
 			
-						half4 color = c*(IN.colorFog.a);
-						color.rgb += IN.colorFog.rgb*(1 - IN.colorFog.a);
-						return color;
+						return c;
 					}
 				ENDCG
 			}
