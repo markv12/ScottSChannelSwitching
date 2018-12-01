@@ -257,7 +257,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb934dc5c7188c44869b82b70ba9fe8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vpManager: {fileID: 0}
   theCamera: {fileID: 4859293744146640}
   projectilePrefab: {fileID: 1029602791847372, guid: 12d61afd8bee5a84ca91e80fad8bf500,
     type: 2}
@@ -338,7 +337,7 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 1.8
+  m_Height: 2
   m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.3

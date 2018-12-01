@@ -42,14 +42,16 @@ public class Projectile : MonoBehaviour {
     private IEnumerator Explode() {
         explosionSource.Play();
         yield return null;
-        theMat.color = new Color(6, 6, 6);
+        theMat.color = new Color(3, 3, 3);
         yield return null;
-        theMat.color = new Color(10, 10, 10);
-        yield return null;
+        t.localScale *= 2;
         theMat.color = new Color(5, 5, 5);
+        t.localScale *= 2;
+        yield return null;
+        t.localScale *= 0.5f;
+        theMat.color = new Color(3, 3, 3);
         yield return null;
         VisionPointManager.instance.AddVisionPoint(t.position);
-        theMat.color = new Color(3, 3, 3);
         yield return null;
         meshR.enabled = false;
         while (explosionSource.isPlaying) {
