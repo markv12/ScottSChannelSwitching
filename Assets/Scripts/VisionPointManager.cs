@@ -52,7 +52,7 @@ public class VisionPointManager : MonoBehaviour {
         while (progress < 1) {
             elapsedTime += Time.deltaTime;
             progress = elapsedTime / CONTRACT_TIME;
-            float easedProgress = Easing.easeInSine(1, 0, progress);
+            float easedProgress = Easing.easeInSine(1, -0.06f, progress);
             SetPointExpandAmount(index, (easedProgress * distanceLimit));
 
             yield return null;

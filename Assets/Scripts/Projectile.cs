@@ -6,10 +6,10 @@ public class Projectile : MonoBehaviour {
     [SerializeField] private Transform t;
     [SerializeField] private MeshRenderer meshR;
 
-    private float speed = 25f;
+    private float speed = 35f;
     private Material theMat;
     private float timeAlive = 0;
-    private const float LIFESPAN = 3f;
+    private const float LIFESPAN = 4f;
 
     private void Awake() {
         theMat = meshR.material;
@@ -17,8 +17,8 @@ public class Projectile : MonoBehaviour {
 
     void Update () {
         if (!exploded) {
-            if (speed < 50f) {
-                speed += Time.deltaTime*12;
+            if (speed < 55f) {
+                speed += Time.deltaTime*15;
             }
             t.position += t.forward * speed * Time.deltaTime;
 
