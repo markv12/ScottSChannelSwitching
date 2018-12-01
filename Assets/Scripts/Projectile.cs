@@ -6,6 +6,8 @@ public class Projectile : MonoBehaviour {
     [SerializeField] private Transform t;
     [SerializeField] private MeshRenderer meshR;
 
+    [SerializeField] public AudioSource explosionSource;
+
     private float speed = 35f;
     private Material theMat;
     private float timeAlive = 0;
@@ -32,21 +34,27 @@ public class Projectile : MonoBehaviour {
     private bool exploded = false;
     private void OnTriggerEnter(Collider other) {
         if (!exploded) {
-            VisionPointManager.instance.AddVisionPoint(t.position);
             StartCoroutine(Explode());
             exploded = true;
         }
     }
 
     private IEnumerator Explode() {
+        explosionSource.Play();
+        yield return null;
         theMat.color = new Color(6, 6, 6);
         yield return null;
         theMat.color = new Color(10, 10, 10);
         yield return null;
         theMat.color = new Color(5, 5, 5);
         yield return null;
+        VisionPointManager.instance.AddVisionPoint(t.position);
         theMat.color = new Color(3, 3, 3);
         yield return null;
+        meshR.enabled = false;
+        while (explosionSource.isPlaying) {
+            yield return null;
+        }
         Destroy(gameObject);
     }
 }
