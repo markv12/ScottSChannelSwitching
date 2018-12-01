@@ -8,6 +8,7 @@ ModelImporter:
     400000: //RootNode
     400002: Mesh1_Grey_Pole_Model
     2100000: Light_Stone
+    2100002: Mesh1_Grey_Pole_ModelMat
     2300000: Mesh1_Grey_Pole_Model
     3300000: Mesh1_Grey_Pole_Model
     4300000: Mesh1_Grey_Pole_Model

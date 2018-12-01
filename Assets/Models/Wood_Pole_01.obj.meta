@@ -8,6 +8,7 @@ ModelImporter:
     400000: Mesh1_Wood_Pole_Model
     400002: //RootNode
     2100000: Wood
+    2100002: Mesh1_Wood_Pole_ModelMat
     2300000: Mesh1_Wood_Pole_Model
     3300000: Mesh1_Wood_Pole_Model
     4300000: Mesh1_Wood_Pole_Model

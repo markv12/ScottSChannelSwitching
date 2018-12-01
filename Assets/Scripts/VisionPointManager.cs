@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class VisionPointManager : MonoBehaviour {
 
+    public static VisionPointManager instance;
+
     [Range(0, 125)]
     public float distanceLimit = 10;
 
@@ -11,6 +13,10 @@ public class VisionPointManager : MonoBehaviour {
     private int currentPointIndex = 0;
     private Vector4[] points = new Vector4[POINT_COUNT];
     private Coroutine[] pointRoutines = new Coroutine[POINT_COUNT];
+
+    private void Awake() {
+        instance = this;
+    }
 
     public void AddVisionPoint(Vector3 point) {
         points[currentPointIndex] = new Vector4(point.x, point.y, point.z, 0);

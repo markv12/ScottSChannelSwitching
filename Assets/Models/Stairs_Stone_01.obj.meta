@@ -8,6 +8,7 @@ ModelImporter:
     400000: Mesh1_Stairs_Stone_Model
     400002: //RootNode
     2100000: Light_Stone
+    2100002: Mesh1_Stairs_Stone_ModelMat
     2300000: Mesh1_Stairs_Stone_Model
     3300000: Mesh1_Stairs_Stone_Model
     4300000: Mesh1_Stairs_Stone_Model
