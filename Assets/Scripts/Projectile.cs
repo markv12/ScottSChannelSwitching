@@ -8,7 +8,7 @@ public class Projectile : MonoBehaviour {
 
     [SerializeField] public AudioSource explosionSource;
 
-    private float speed = 35f;
+    private float speed = 40f;
     private Material theMat;
     private float timeAlive = 0;
     private const float LIFESPAN = 4f;
@@ -19,8 +19,8 @@ public class Projectile : MonoBehaviour {
 
     void Update () {
         if (!exploded) {
-            if (speed < 55f) {
-                speed += Time.deltaTime*15;
+            if (speed < 60f) {
+                speed += Time.deltaTime*16;
             }
             t.position += t.forward * speed * Time.deltaTime;
 

@@ -5,7 +5,7 @@ public class VisionPointManager : MonoBehaviour {
 
     public static VisionPointManager instance;
 
-    private const float distanceLimit = 6.666f;
+    private const float distanceLimit = 6f;
     private const int POINT_COUNT = 25;
 
     private int currentPointIndex = 0;
@@ -26,7 +26,6 @@ public class VisionPointManager : MonoBehaviour {
     }
 
     void Update() {
-        //distanceLimit = 15f + Mathf.Sin(Time.time) * 2;
         Shader.SetGlobalVectorArray("VisionPoints", points);
     }
 
