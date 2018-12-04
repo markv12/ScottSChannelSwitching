@@ -1,18 +1,17 @@
 fileFormatVersion: 2
-guid: 3d83ff020daea3d4d8553aafce06db81
+guid: c839c0e6b5448fb4c8f4f7d04d6086c2
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: Mesh1_Grey_Door_Round_Model
-    400000: //RootNode
-    400002: Mesh1_Grey_Door_Round_Model
-    2100000: Light_Stone
-    2100002: Dark_Stone
-    2100004: Mesh1_Grey_Door_Round_ModelMat
-    2300000: Mesh1_Grey_Door_Round_Model
-    3300000: Mesh1_Grey_Door_Round_Model
-    4300000: Mesh1_Grey_Door_Round_Model
+    100000: Mesh1_Wood_Pole_Model
+    100002: //RootNode
+    400000: Mesh1_Wood_Pole_Model
+    400002: //RootNode
+    2100000: Wood
+    2100002: Mesh1_Wood_Pole_ModelMat
+    2300000: Mesh1_Wood_Pole_Model
+    3300000: Mesh1_Wood_Pole_Model
+    4300000: Mesh1_Wood_Pole_Model
   externalObjects: {}
   materials:
     importMaterials: 0
@@ -47,10 +46,10 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
-    importVisibility: 1
+    importVisibility: 0
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
