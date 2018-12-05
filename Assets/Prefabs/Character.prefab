@@ -85,7 +85,7 @@ Camera:
   m_GameObject: {fileID: 1887819579244368}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
@@ -307,8 +307,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: f26c47a551424544d917a9aa49cc48f5, type: 3}
   - {fileID: 8300000, guid: cf96e87563e593b44b697b6aa3e7eca5, type: 3}
   - {fileID: 8300000, guid: 68ab5885617746744b8c12833e3ff7cd, type: 3}
-  m_JumpSound: {fileID: 0}
-  m_LandSound: {fileID: 0}
+  m_JumpSound: {fileID: 8300000, guid: 866e31230cf0a524ea88f7f3458d7f9b, type: 3}
+  m_LandSound: {fileID: 8300000, guid: 558bddfd6040c5942a17cbccb187d736, type: 3}
 --- !u!114 &114740272745208530
 MonoBehaviour:
   m_ObjectHideFlags: 1
