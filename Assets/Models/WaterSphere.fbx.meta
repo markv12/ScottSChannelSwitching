@@ -1,18 +1,19 @@
 fileFormatVersion: 2
-guid: 50ec83fa0464f3a4a966bc170fad3fd0
+guid: 309f922a648f18847ae25ccff89c5c1f
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Mesh1_Wood_Window_Round_Model
-    100002: //RootNode
-    400000: Mesh1_Wood_Window_Round_Model
-    400002: //RootNode
-    2100000: Wood
-    2100002: Dark_Stone
-    2100004: Mesh1_Wood_Window_Round_ModelMat
-    2300000: Mesh1_Wood_Window_Round_Model
-    3300000: Mesh1_Wood_Window_Round_Model
-    4300000: Mesh1_Wood_Window_Round_Model
+    100000: Camera
+    100002: fountain
+    100004: //RootNode
+    400000: Camera
+    400002: fountain
+    400004: //RootNode
+    2000000: Camera
+    2100000: fountain_mat
+    2300000: fountain
+    3300000: fountain
+    4300000: fountain
   externalObjects: {}
   materials:
     importMaterials: 0

@@ -1,6 +1,4 @@
-﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
-
-Shader "psx/vertexlitSpecial" {
+﻿Shader "psx/vertexlitSpecial" {
 	Properties{
 		_MainTex("Base (RGB)", 2D) = "white" {}
 		_Color("Color", Color) = (1.0, 1.0, 1.0, 1.0)
@@ -71,8 +69,8 @@ Shader "psx/vertexlitSpecial" {
 
 						float closeness = 0;
 						float coloredness = 0;
-						float lum = (0.2126*c.r + 0.7152*c.g + 0.0722*c.b);
-						float theNoise = snoise(IN.worldPos * 4);
+						float lum = -0.5+(0.2126*c.r + 0.7152*c.g + 0.0722*c.b);
+						float theNoise = snoise(IN.worldPos * 3);
 						for (int j = 0; j < 25; j++) {
 							float4 thePoint = VisionPoints[j];
 							float dist = distance(IN.worldPos, thePoint);
@@ -94,13 +92,11 @@ Shader "psx/vertexlitSpecial" {
 	/*					if (coloredness > 0) {
 							return float4(1, 0, 0, 1);
 						}*/
-					/*	float r = distance(IN.worldPos, VisionPoints[0])*0.02;
-						float b = distance(IN.worldPos, VisionPoints[1])*0.02;
-						return float4(r, 0, b, 1);*/
-			
+
 						return c;
 					}
 				ENDCG
 			}
 	}
+	FallBack "VertexLit"
 }
