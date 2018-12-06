@@ -5,7 +5,7 @@ public class VisionPointManager : MonoBehaviour {
 
     public static VisionPointManager instance;
 
-    private const float distanceLimit = 6f;
+    private const float distanceLimit = 6.4f;
     private const int POINT_COUNT = 25;
 
     private int currentPointIndex = 0;
@@ -30,7 +30,7 @@ public class VisionPointManager : MonoBehaviour {
     }
 
     private const float EXPAND_TIME = 0.666f;
-    private const float CONTRACT_TIME = 20f;
+    private const float CONTRACT_TIME = 17f;
     private IEnumerator VisionPointRoutine(int index) {
         float elapsedTime = 0;
         float progress = 0;
@@ -48,7 +48,7 @@ public class VisionPointManager : MonoBehaviour {
         while (progress < 1) {
             elapsedTime += Time.deltaTime;
             progress = elapsedTime / CONTRACT_TIME;
-            float easedProgress = Easing.easeInSine(1, -0.06f, progress);
+            float easedProgress = Easing.easeInSine(1, -0.16f, progress);
             SetPointExpandAmount(index, (easedProgress * distanceLimit));
 
             yield return null;
