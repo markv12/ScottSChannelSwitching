@@ -1,19 +1,25 @@
 fileFormatVersion: 2
-guid: ae3e36db52cf2e048b11549e91a89b8b
+guid: 13bd89caf272cb847a9078018d1314b3
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: default
-    100002: //RootNode
-    400000: default
-    400002: //RootNode
-    2100000: defaultMat
-    2300000: default
-    3300000: default
-    4300000: default
+    100000: Circle
+    100002: Circle.001
+    100004: //RootNode
+    400000: Circle
+    400002: Circle.001
+    400004: //RootNode
+    2100000: No Name
+    2100002: None
+    2300000: Circle
+    2300002: Circle.001
+    3300000: Circle
+    3300002: Circle.001
+    4300000: Circle.001
+    4300002: Circle
   externalObjects: {}
   materials:
-    importMaterials: 0
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -45,10 +51,10 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
-    importVisibility: 0
+    importVisibility: 1
     importBlendShapes: 1
-    importCameras: 0
-    importLights: 0
+    importCameras: 1
+    importLights: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
