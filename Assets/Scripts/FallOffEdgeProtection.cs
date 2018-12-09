@@ -4,10 +4,15 @@ public class FallOffEdgeProtection : MonoBehaviour {
 
     [SerializeField]
     private Transform theTransform;
-	
-	void Update () {
+    private Vector3 startPos;
+
+    private void Awake() {
+        startPos = theTransform.position;
+    }
+
+    void Update () {
 		if(theTransform.position.y < -15) {
-            theTransform.position = Vector3.zero;
+            theTransform.position = startPos;
         }
 	}
 }

@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class VisionPointManager : MonoBehaviour {
 
@@ -17,6 +19,7 @@ public class VisionPointManager : MonoBehaviour {
     }
 
     public void AddVisionPoint(Vector3 point) {
+
         points[currentPointIndex] = new Vector4(point.x, point.y, point.z, 0);
         this.EnsureCoroutineStopped(ref pointRoutines[currentPointIndex]);
         pointRoutines[currentPointIndex] = StartCoroutine(VisionPointRoutine(currentPointIndex));
