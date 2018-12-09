@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 660b4e691ae61124fa04c9c322f086d4
+guid: fba52e528a08606419e9d71e9b1a8a33
 TextureImporter:
   fileIDToRecycleName: {}
   externalObjects: {}
@@ -76,17 +76,6 @@ TextureImporter:
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 79
-    crunchedCompression: 1
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: Nintendo Switch
-    maxTextureSize: 128
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 100
     crunchedCompression: 1
     allowsAlphaSplitting: 0
     overridden: 0
